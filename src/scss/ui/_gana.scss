@@ -1,0 +1,34 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.gana{
+
+    background-color: v.$primario;
+    .gana-grid{
+
+    @include m.tablet{
+         @include m.grid(5,4rem);
+         align-items: center;
+        }    
+    }
+    .contenido-gana{
+        grid-column: 1/4;
+        margin-bottom: 5rem;
+        h2{
+            @include m.headingBorder(v.$secundario, v.$blanco);
+            
+        }
+        p{
+            font-weight: 700;
+        }
+    }
+    .imagen-gana{
+        grid-column: 4/6;
+        transition-property: transform;
+        transition-duration: 300ms;
+        &:hover{
+          transform: rotate(8deg) scale(1.1);  
+        }
+    }
+
+}
